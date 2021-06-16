@@ -1,46 +1,50 @@
 <style>
-	h1, figure, p {
-		text-align: center;
-		margin: 0 auto;
-	}
-
-	h1 {
-		font-size: 2.8em;
-		text-transform: uppercase;
-		font-weight: 700;
-		margin: 0 0 0.5em 0;
-	}
-
-	figure {
-		margin: 0 0 1em 0;
-	}
-
-	img {
-		width: 100%;
-		max-width: 400px;
-		margin: 0 0 1em 0;
-	}
-
-	p {
-		margin: 1em auto;
-	}
-
-	@media (min-width: 480px) {
-		h1 {
-			font-size: 4em;
-		}
-	}
+    .cover-video {
+        /* position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: -100; */
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        z-index: -100;
+        transform: translate(-50%, -50%);
+    }
+    .logo {
+        font-family: 'Fondamento', cursive;
+        font-size: 100px;
+        text-align: center;
+        color: #fff;
+        text-decoration: overline;
+        text-decoration-color: crimson;
+    }
+    .hero {
+        text-align: center;
+        color: peachpuff;
+        font-size: 2rem;
+    }
 </style>
 
 <svelte:head>
-	<title>Sapper project template</title>
+    <title>Samyog</title>
 </svelte:head>
+<div class="hero">
+    <h1 class="logo">Samyog</h1>
+    <p>Break bread and barriers... together.</p>
+</div>
 
-<h1>Great success!</h1>
+<video
+    class="cover-video"
+    src="https://cdn.glitch.com/3952eb32-bbc6-45a9-90a7-32ebd4b02693%2Fvideo.mp4?v=1578250146268"
+    autoplay
+    loop />
 
-<figure>
-	<img alt='Borat' src='great-success.png'>
-	<figcaption>HIGH FIVE!</figcaption>
-</figure>
-
-<p><strong>Try editing this file (src/routes/index.svelte) to test live reloading.</strong></p>
+<aside id="firebaseui-auth-container" />
+<div id="sign-in-status" />
+<button id="sign-in" type="button"></button>
+<p id="account-details" />
